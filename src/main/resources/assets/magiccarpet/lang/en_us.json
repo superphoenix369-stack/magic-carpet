@@ -1,0 +1,14 @@
+{
+  "item.magiccarpet.magic_carpet": "Magic Carpet",
+  "entity.magiccarpet.magic_carpet": "Magic Carpet",
+  "key.category.magiccarpet.magic_carpet": "Magic Carpet",
+  "key.magiccarpet.call": "Call Carpet (needs Loyalty)",
+  "hud.magiccarpet.hold_shift": "Keep holding Shift to get off ",
+  "hud.magiccarpet.frayed": "Worn out! Repair with Phantom Membrane",
+  "message.magiccarpet.frayed": "Your carpet is worn out and sinking. Repair it with Phantom Membrane.",
+  "message.magiccarpet.caught": "Caught you!",
+  "message.magiccarpet.call.none": "No carpet of yours is nearby.",
+  "message.magiccarpet.call.no_loyalty": "Only a carpet with Loyalty comes when called.",
+  "message.magiccarpet.call.too_far": "Your carpet is too far away to hear you.",
+  "message.magiccarpet.call.coming": "Your carpet is on its way!"
+}

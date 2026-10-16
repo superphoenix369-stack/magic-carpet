@@ -1,0 +1,56 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+// Stop with a clear message if part of the project didn't upload (a jar without these won't load).
+['src/main/resources/fabric.mod.json', 'src/main/resources/assets/magiccarpet/lang/en_us.json',
+ 'src/client/java/com/magiccarpet/client/MagicCarpetClient.java'].each { required ->
+	if (!file(required).exists()) {
+		throw new GradleException("Missing ${required}. Upload the whole 'src' folder again (including src/main/resources and src/client).")
+	}
+}
+
+base {
+	archivesName = 'magic-carpet'
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"magiccarpet" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_magic-carpet" }
+	}
+}

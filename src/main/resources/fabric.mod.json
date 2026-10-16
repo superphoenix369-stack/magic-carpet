@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "magiccarpet",
+	"version": "${version}",
+	"name": "Magic Carpet",
+	"description": "A craftable flying carpet: happy-ghast controls with elytra speed. Throttle with W, coast when you let go, brake with S. Durability 1250 (about 20 minutes of flight), repaired with Phantom Membrane. Loyalty catches you if you fall and brings the carpet when you press C.",
+	"authors": [
+		"Zac Supinger"
+	],
+	"license": "MIT",
+	"icon": "assets/magiccarpet/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.magiccarpet.MagicCarpet"
+		],
+		"client": [
+			"com.magiccarpet.client.MagicCarpetClient"
+		]
+	},
+	"mixins": [
+		"magiccarpet.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_dye",
+  "dye": "#minecraft:dyes",
+  "group": "dyed_magic_carpet",
+  "result": {
+    "id": "magiccarpet:magic_carpet"
+  },
+  "target": "magiccarpet:magic_carpet"
+}
