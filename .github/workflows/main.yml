@@ -1,0 +1,32 @@
+# Builds the mod on GitHub's servers every time you upload changes (or when you press "Run workflow").
+# The finished .jar appears under the run's "Artifacts" section as "magic-carpet-jar".
+name: build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'microsoft'
+      - name: setup gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '9.7.1'
+      - name: build
+        run: gradle build
+      - name: upload the mod jar
+        uses: actions/upload-artifact@v7
+        with:
+          name: magic-carpet-jar
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
