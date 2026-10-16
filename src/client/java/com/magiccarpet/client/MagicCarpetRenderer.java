@@ -59,11 +59,11 @@ public class MagicCarpetRenderer extends EntityRenderer<MagicCarpetEntity, Magic
 	public void submit(MagicCarpetRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
 		poseStack.pushPose();
 		poseStack.translate(0.0F, 0.125F, 0.0F);
-		poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - state.yRot));
+		poseStack.rotate(Axis.YP.rotationDegrees(180.0F - state.yRot));
 
 		if (state.hurtTime > 0.0F) {
 			float wobble = Mth.sin(state.hurtTime) * state.hurtTime * state.damageTime / 10.0F * state.hurtDir;
-			poseStack.mulPose(Axis.XP.rotationDegrees(wobble));
+			poseStack.rotate(Axis.XP.rotationDegrees(wobble));
 		}
 
 		poseStack.scale(-1.0F, -1.0F, 1.0F);
