@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "magiccarpet:item/magic_carpet",
+    "tints": [
+      {
+        "type": "minecraft:dye",
+        "default": -5231066
+      }
+    ]
+  }
+}
