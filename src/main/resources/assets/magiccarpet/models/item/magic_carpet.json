@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "magiccarpet:item/magic_carpet",
-    "layer1": "magiccarpet:item/magic_carpet_overlay"
-  }
-}
