@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "magic_carpet",
+  "key": {
+    "M": "minecraft:phantom_membrane",
+    "C": "minecraft:white_carpet",
+    "T": "minecraft:ghast_tear",
+    "G": "minecraft:dried_ghast",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "MCM",
+    "TGT",
+    "MSM"
+  ],
+  "result": {
+    "components": {
+      "minecraft:dyed_color": 16383998
+    },
+    "id": "magiccarpet:magic_carpet"
+  }
+}
